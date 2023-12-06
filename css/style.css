@@ -1,0 +1,782 @@
+/* Подключение шрифтов */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+/* Обнуляющий стиль */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  background-color: #000000;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Основные стили */
+body {
+  position: relative;
+}
+body,
+* {
+  font-family: "Montserrat";
+  font-size: 18px;
+  line-height: 140%;
+  font-weight: 500;
+  color: #fff;
+}
+
+._container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+.test-block {
+  padding: 100px 0px 0px 0px;
+}
+.test-block__container {
+  overflow: hidden;
+  width: 0;
+  text-align: left;
+  transition: all 3s ease 0s;
+}
+.test-block__container:hover {
+  width: 100%;
+}
+._container {
+}
+.test-block__text {
+  opacity: 0;
+  display: block;
+  white-space: nowrap;
+  transition: all 3s ease 0s;
+  height: 100px;
+}
+.test-block__container:hover .test-block__text {
+  opacity: 1;
+}
+
+/* Стили для шапки сайта */
+.header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0px 60px 0px 60px;
+  overflow: hidden;
+  backdrop-filter: blur(3px);
+  border-bottom: 2px solid #fff;
+  z-index: 9999;
+}
+.header::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+.header__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.header__logo {
+  margin: 0px 20px 0px 0px;
+  position: relative;
+  z-index: 9999;
+}
+.logo {
+  width: 280px;
+  display: flex;
+}
+.logo__name {
+  font-weight: 800;
+  font-size: 25px;
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.6) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: wave 2s infinite;
+}
+.header__nav {
+  max-width: 1150px;
+  margin: 0px 0px 0px 0px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+}
+.header__list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header__item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 200px;
+  overflow: hidden;
+}
+.header__item::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  z-index: 0;
+  right: 0%;
+  top: 100%;
+  transition: transform 0.2s ease-in 0s;
+}
+.header__item::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  z-index: 0;
+  right: 0%;
+  top: -100%;
+  transition: transform 0.2s ease-in 0s;
+}
+.header__item:first-child {
+}
+
+.header__item:hover::after {
+  transform: translateY(-5%);
+}
+.header__item:hover::before {
+  transform: translateY(5%);
+}
+
+.header__item:hover .header__link {
+  transform: translateY(5%);
+}
+
+.header__link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.4s ease 0s;
+}
+
+.header__burger {
+  display: none;
+  width: 50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  z-index: 9999;
+}
+
+.burger__line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #fff;
+  height: 2px;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+.burger__line:nth-child(2) {
+  background-color: inherit;
+}
+.burger__line:nth-child(2)::after {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  height: 2px;
+  position: absolute;
+  top: 0px;
+  transition: transform 0.2s ease 0s;
+}
+.burger__line:nth-child(2)::before {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  height: 2px;
+  position: absolute;
+  top: 0px;
+  transition: transform 0.2s ease 0s;
+}
+.header__burger.close .burger__line:first-child {
+  width: 0px;
+}
+.header__burger.close .burger__line:last-child {
+  width: 0px;
+}
+.header__burger.close .burger__line:nth-child(2)::after {
+  transform: rotate(-45deg);
+}
+.header__burger.close .burger__line:nth-child(2)::before {
+  transform: rotate(45deg);
+}
+.header__menu {
+  display: block;
+  position: fixed;
+  z-index: 9990;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease 0s;
+}
+.header__menu.show {
+  transform: translateX(0%);
+}
+.menu {
+}
+.menu__list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu__item .header__link {
+  color: #000;
+  font-size: 30px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+.menu__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px 0px 10px 0px;
+}
+
+.menu__item::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  transition: width 0.3s ease 0s;
+}
+.menu__item::before {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+  transition: width 0.3s ease 0s;
+}
+.menu__item .header__link::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 0%;
+  background-color: #000;
+  margin: 0px 0px 0px 10px;
+  transition: height 0.3s ease 0s;
+}
+.menu__item .header__link::before {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 0%;
+  background-color: #000;
+  margin: 0px 10px 0px 0px;
+  transition: height 0.3s ease 0s;
+}
+.menu__item:hover .header__link::before {
+  height: 80%;
+}
+.menu__item:hover .header__link::after {
+  height: 80%;
+}
+.menu__item:hover::before {
+  width: 80%;
+}
+.menu__item:hover::after {
+  width: 80%;
+}
+@-webkit-keyframes wave {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+/* Адаптив для шапки */
+@media (max-width: 1000px) {
+  .logo__name {
+    font-size: 20px;
+  }
+  .header__item {
+    width: 140px;
+  }
+  .header__link {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+@media (max-width: 761px) {
+  .header__nav {
+    display: none;
+  }
+  .header {
+    padding: 0px 20px 0px 20px;
+  }
+  .header__container {
+    justify-content: space-between;
+  }
+  .header__burger {
+    display: flex;
+  }
+}
+/* стилизация главного блока */
+.main {
+  padding: 200px 0px 0px 0px;
+}
+.main__title {
+  font-size: 50px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0px 0px 50px 0px;
+}
+.main__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main__name {
+  font-size: 30px;
+  font-weight: 500;
+  display: inline-block;
+  margin: 0px 0px 25px 0px;
+}
+.main__date-birth {
+  margin: 0px 0px 25px 0px;
+}
+.main__date-birth span {
+  font-size: 20px;
+}
+.main__location {
+  margin: 0px 0px 25px 0px;
+}
+.main__location span {
+  font-size: 20px;
+}
+.main__post {
+  margin: 0px 0px 25px 0px;
+}
+.main__post {
+  font-size: 20px;
+}
+.main__salary {
+  margin: 0px 0px 25px 0px;
+}
+.main img {
+  display: block;
+  height: 500px;
+  border-radius: 5px;
+}
+@media (max-width: 850px) {
+  .main__title {
+    font-size: 37px;
+  }
+  .main__name {
+    font-size: 25px;
+  }
+  .main__date-birth span {
+    font-size: 16px;
+  }
+  .main__location span {
+    font-size: 16px;
+  }
+  .main__post {
+    font-size: 16px;
+  }
+  .main__salary {
+    font-size: 16px;
+  }
+  .main__about-me {
+    margin: 0px 20px 0px 0px;
+  }
+}
+@media (max-width: 650px) {
+  .main__about-me {
+    margin: 0px 0px 0px 0px;
+  }
+  .main__content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .main__about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main__date-birth {
+    margin: 0px 0px 15px 0px;
+  }
+  .main__location {
+    margin: 0px 0px 15px 0px;
+  }
+  .main__post {
+    margin: 0px 0px 15px 0px;
+  }
+  .main__salary {
+    margin: 0px 0px 15px 0px;
+  }
+  .main img {
+    height: 350px;
+  }
+  .main__content span {
+    text-align: center;
+  }
+}
+/* стилизация ключевые навыки*/
+.skills__container {
+  padding: 150px 0px 0px 0px;
+}
+.skills__title {
+  font-size: 50px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0px 0px 50px 0px;
+}
+.skills__content {
+}
+.skills__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skills__item {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  width: 300px;
+  height: 320px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #000;
+  flex-wrap: nowrap;
+  margin: 0px 50px 0px 0px;
+}
+.skills__item:last-child {
+  margin: 0px 0px 0px 0px;
+}
+.skills__name {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+}
+.skills__img {
+  margin: 30px 0px 40px 0px;
+}
+.skills__img img {
+  display: block;
+  width: 150px;
+  height: 150px;
+}
+@media (max-width: 750px) {
+  .skills__list {
+    flex-direction: column;
+  }
+  .skills__item {
+    margin: 0px 0px 20px 0px;
+  }
+}
+@media (max-width: 850px) {
+  .skills__title {
+    font-size: 35px;
+  }
+}
+/* стилизация блока достижения */
+.achievements__container {
+  padding: 150px 0px 0px 0px;
+}
+.achievements__title {
+  font-size: 50px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0px 0px 50px 0px;
+}
+.achievements__list {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 30px 50px 30px 50px;
+}
+.achievements__img {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 0px 0px 50px 0px;
+}
+.achievements__item {
+  margin: 0px 0px 50px 0px;
+}
+.achievements__name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+}
+@media (max-width: 850px) {
+  .achievements__title {
+    font-size: 35px;
+  }
+  .achievements__name {
+    font-size: 16px;
+  }
+  .achievements__item {
+    margin: 0px 0px 25px 0px;
+  }
+}
+@media (max-width: 400px) {
+  .achievements__name {
+    font-size: 14px;
+  }
+}
+/* Стилизация блока опыт */
+.experience {
+  margin: 0px 0px 150px 0px;
+}
+.experience__container {
+  padding: 150px 0px 0px 0px;
+}
+._container {
+}
+.experience__title {
+  font-size: 50px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0px 0px 50px 0px;
+}
+.experience__item {
+}
+.experience__info {
+}
+.experience__post {
+  font-size: 25px;
+  display: inline-block;
+  margin: 0px 0px 30px 0px;
+}
+.experience__name span {
+  font-size: 25px;
+  display: inline-block;
+  margin: 0px 0px 30px 0px;
+}
+.experience__name a {
+  font-size: 25px;
+  display: inline-block;
+  position: relative;
+}
+.experience__name a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+}
+.experience__name a::before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease 0s;
+}
+.experience__name a:hover::before {
+  width: 100%;
+}
+.experience__activitys {
+  font-size: 25px;
+  display: inline-block;
+  margin: 0px 0px 30px 0px;
+}
+.experience__activity {
+  font-size: 25px;
+  display: inline-block;
+  margin: 0px 0px 30px 0px;
+}
+@media (max-width: 850px) {
+  .experience__title {
+    font-size: 35px;
+  }
+  .experience__post {
+    font-size: 20px;
+  }
+  .experience__name span {
+    font-size: 20px;
+  }
+  .experience__name a {
+    font-size: 20px;
+  }
+  .experience__activity {
+    font-size: 20px;
+  }
+}
+@media (max-width: 650px) {
+  .experience__title {
+    font-size: 25px;
+  }
+  .experience__post {
+    font-size: 16px;
+  }
+  .experience__name span {
+    font-size: 16px;
+  }
+  .experience__name a {
+    font-size: 16px;
+  }
+  .experience__activity {
+    font-size: 16px;
+  }
+}
+/* Стилизация подвала */
+.footer {
+  width: 100%;
+  padding: 50px 0px 50px 0px;
+  background-color: #0000008e;
+  border-top: 2px solid #fff;
+}
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+._container {
+}
+.footer__author a {
+  font-size: 25px;
+  font-weight: 500;
+}
+@media (max-width: 650px) {
+  .footer__author a {
+    font-size: 20px;
+    text-align: center;
+  }
+}
